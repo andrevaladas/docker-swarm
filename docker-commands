@@ -1,0 +1,26 @@
+Docker Login
+------------------
+User: andrevaladas
+Pwd : K5nEph+2TI6R
+
+
+
+# Connect to andrevaladas/app-swarm-lb
+docker run --rm -ti -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client andrevaladas/app-lb
+
+# => You can now start using the swarm andrevaladas/app-swarm-lb by executing:
+export DOCKER_HOST=tcp://127.0.0.1:32768
+
+
+docker swarm init
+docker swarm leave --force
+
+
+docker run -p 4440:80 andrevaladas/python-redis:latest
+docker run -i -t andrevaladas/centos-vm:latest /bin/bash
+
+docker stack deploy -c docker-compose.yml app
+docker stack ps app
+
+
+docker node ls
