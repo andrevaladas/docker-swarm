@@ -40,7 +40,7 @@ echo -----------------------
 echo - Terraform Setup
 echo -----------------------
 if [[ ! -f /usr/bin/terraform ]]; then
-  wget https://releases.hashicorp.com/terraform/0.11.5/terraform_0.11.7_linux_amd64.zip
+  wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
   unzip *.zip
   rm -f *.zip
   mv -f terraform /usr/bin/
